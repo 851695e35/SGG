@@ -1,0 +1,12 @@
+torch>=2.2,<2.6
+torchvision>=0.17,<0.21
+numpy>=1.24,<2.0
+pillow>=10.0,<11.0
+tqdm>=4.66,<5.0
+accelerate>=0.31,<1.1
+diffusers>=0.30,<0.33
+transformers>=4.44,<4.48
+timm>=1.0,<1.1
+einops>=0.8,<0.9
+wandb>=0.17,<0.19
+openai-clip>=1.0.1

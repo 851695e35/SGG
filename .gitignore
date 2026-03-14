@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Runtime artifacts
+outputs/
+output/
+samples/
+exps/
+wandb/
+tmp/
+test_runs/
+test.sh
+*.tmp
+
+# Checkpoints and logs
+*.pt
+*.ckpt
+*.log
+nohup.out
