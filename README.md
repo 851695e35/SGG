@@ -1,13 +1,15 @@
-# Segmented Guidance
+# Segmented Guidance (SGG) in Diffusion
+
+![Method](asset/method.png)
+
+**Improving Diffusion Generalization with Weak-to-Strong Segmented Guidance**
+
+https://arxiv.org/abs/2603.20584
 
 
-### Note
-We thank a reviewer for pointing out a naming overlap with another interesting work in diffusion guidance research, [SEG](https://arxiv.org/abs/2408.00760). Since changing the conference title was not feasible, we use **SGG** to avoid confusion. Thank you for your understanding.
+For **toy example** used in this work, please refer to https://github.com/851695e35/Leaves_Toy
 
-Public release for segmented guidance:
-
-- `sd3`: SD3.5 sampling (and SD3-compatible pipeline/CLI).
-- `sit`: SiT training with multiple guidance variants.
+## Requirements
 
 Install dependencies from repo root:
 
@@ -15,12 +17,13 @@ Install dependencies from repo root:
 pip install -r requirements.txt
 ```
 
-## SD3.5 Sampling
+## SD3/3.5 Sampling
 
 `sd3` contains:
 
 - `sd3_pipeline.py`: segmented-guidance pipeline implementation.
 - `sample.py`: unified CLI sampler for both SD3 and SD3.5.
+- `sample_loop.py`: unified CLI sampler for both SD3 and SD3.5 in the loop.
 
 Use the unified sampler in `sd3/sample.py`.
 
@@ -28,7 +31,7 @@ Use the unified sampler in `sd3/sample.py`.
 python sd3/sample.py \
   --model sd35 \
   --model-path /path/to/sd35 \
-  --prompt "a cinematic photo of a lighthouse in stormy sea" \
+  --prompt "A storefront with 'Text to Image' written on it." \
   --use-segmented-guidance \
   --guidance-scale 4.5 \
   --cfg-guidance-start 1 \
@@ -43,19 +46,20 @@ CFG-only baseline example:
 
 ```bash
 python sd3/sample.py \
-  --model sd3 \
-  --model-path /path/to/sd3 \
-  --prompt "a watercolor painting of a red fox in snow" \
-  --guidance-scale 3.5 \
-  --output-dir outputs/sd3
+  --model sd35 \
+  --model-path /path/to/sd35 \
+  --prompt "A storefront with 'Text to Image' written on it." \
+  --guidance-scale 4.5 \
+  --output-dir outputs/sd35
 ```
 
 For SD3, keep the same command and switch `--model sd3` with an SD3 model path.
 
-### Qualitative results
 
+### Qualitative comparison
 
 ![SD3 qualitative comparison](asset/qualitative.png)
+
 
 ## SiT Training
 
@@ -83,12 +87,12 @@ Supported guidance types:
 Examples:
 
 ```bash
-./scripts/train_none.sh
-./scripts/train_uncond.sh
-./scripts/train_segmented.sh
-./scripts/train_layerskip.sh
-./scripts/train_branch.sh
-./scripts/train_separate.sh
+./scripts/train_none.sh # baseline
+./scripts/train_uncond.sh # MG
+./scripts/train_segmented.sh # SGG
+./scripts/train_layerskip.sh # SLG
+./scripts/train_branch.sh # BR
+./scripts/train_separate.sh # AG
 ```
 
 
@@ -110,7 +114,8 @@ CKPT_STEP=latest \
 ```
 
 
-
+### Notes on naming
+We appreciate a reviewer for pointing out a naming overlap with another interesting work in diffusion guidance research, [SEG](https://arxiv.org/abs/2408.00760). Since changing the conference title was not feasible, we use **SGG** to avoid confusion.
 
 
 ### Reference links
@@ -118,7 +123,6 @@ CKPT_STEP=latest \
 For running details one can refer to wandb project for references.
 
 https://wandb.ai/liangyuy/w2sseg/reports/w2s-seg---VmlldzoxNjA2Nzk0Mg?accessToken=hu0pq3um4hgqge00uhxmx65hhsxi1ik2nda9obmp7ut941hrphindexsflvdi8li
-
 
 
 

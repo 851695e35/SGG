@@ -195,7 +195,7 @@ def main() -> None:
     if args.filename:
         filename = args.filename
     else:
-        mode = "seg" if args.use_segmented_guidance else "cfg"
+        mode = "sgg" if args.use_segmented_guidance else "cfg"
         filename = (
             f"{args.model}_{mode}_seed{args.seed}_steps{args.num_inference_steps}"
             f"_cfg{args.guidance_scale}.png"

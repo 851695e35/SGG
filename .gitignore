@@ -4,13 +4,13 @@ __pycache__/
 
 # Runtime artifacts
 outputs/
-output/
 samples/
 exps/
 wandb/
 tmp/
 test_runs/
 test.sh
+run.sh
 *.tmp
 
 # Checkpoints and logs
