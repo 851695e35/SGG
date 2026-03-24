@@ -125,6 +125,15 @@ For running details one can refer to wandb project for references.
 https://wandb.ai/liangyuy/w2sseg/reports/w2s-seg---VmlldzoxNjA2Nzk0Mg?accessToken=hu0pq3um4hgqge00uhxmx65hhsxi1ik2nda9obmp7ut941hrphindexsflvdi8li
 
 
+## Citation
+```
+@article{yuan2026improvingdiffusiongeneralizationweaktostrong,
+      title={Improving Diffusion Generalization with Weak-to-Strong Segmented Guidance}, 
+      author={Liangyu, Yuan and Yufei, Huang and Mingkun, Lei and Tong, Zhao and Ruoyu, Wang and Changxi, Chi and Yiwei, Wang and Chi Zhang},
+      journal={arXiv preprint arXiv:2603.20584},
+      year={2026},
+}
+```
 
 
 ## Contact
