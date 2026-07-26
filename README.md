@@ -138,4 +138,4 @@ https://wandb.ai/liangyuy/w2sseg/reports/w2s-seg---VmlldzoxNjA2Nzk0Mg?accessToke
 
 ## Contact
 
-If you have any problem or suggestions, feel free to contact liangyuy001@gmail.com.
+If you have any problem or suggestions, feel free to contact liangyuy008@gmail.com.
